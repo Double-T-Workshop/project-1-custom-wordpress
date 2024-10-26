@@ -19,7 +19,6 @@ registerBlockType("custom/block", {
 
     return (
       <>
-        <RichText tagName="p" onChange={onChangeContent} value="1234566" />
         <RichText
           tagName="p"
           onChange={onChangeContent}
