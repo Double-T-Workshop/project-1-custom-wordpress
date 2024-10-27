@@ -7,7 +7,7 @@ This project is a personal side project built using Next.js for the frontend int
 #### Getting Started
 
 ```sh
-cd Custom Gutenberg Block/block
+cd target folder
 npm i
 npx webpack --mode development
 ```
