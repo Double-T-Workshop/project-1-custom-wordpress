@@ -16,7 +16,7 @@ function custom_block_with_inputs_register_block() {
 }
 add_action( 'init', 'custom_block_with_inputs_register_block' );
 
-function custom_css_block_enqueue() {
+function custom_css_block_with_wordpress_style_enqueue() {
   wp_enqueue_script(
       'custom-css-block-with-wordpress-style',
       plugin_dir_url(__FILE__) . 'build/index.js',
@@ -25,5 +25,5 @@ function custom_css_block_enqueue() {
   );
 }
 
-add_action('enqueue_block_editor_assets', 'custom_css_block_enqueue');
+add_action('enqueue_block_editor_assets', 'custom_css_block_with_wordpress_style_enqueue');
 
