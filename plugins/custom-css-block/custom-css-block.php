@@ -3,7 +3,7 @@
 Plugin Name: Custom CSS Block
 Description: A custom block that allows users to modify CSS properties.
 Version: 1.0
-Author: Double-T-Workshop
+Author: By Double-T-Workshop
 */
 
 // Exit if accessed directly
