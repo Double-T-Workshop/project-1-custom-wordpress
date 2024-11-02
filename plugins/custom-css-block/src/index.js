@@ -35,24 +35,24 @@ registerBlockType("your-plugin/your-custom-block", {
             <h2>Background Color</h2>
             <ColorPalette
               value={backgroundColor}
-              //  onChange={(color) => setAttributes({ backgroundColor: color })}
+              onChange={(color) => setAttributes({ backgroundColor: color })}
             />
             <h2>Text Color</h2>
             <ColorPalette
               value={textColor}
-              //  onChange={(color) => setAttributes({ textColor: color })}
+              onChange={(color) => setAttributes({ textColor: color })}
             />
             <RangeControl
               label="Width (%)"
               value={width}
-              //onChange={(newWidth) => setAttributes({ width: newWidth })}
+              onChange={(newWidth) => setAttributes({ width: newWidth })}
               min={0}
               max={100}
             />
             <RangeControl
               label="Padding (px)"
               value={padding}
-              //onChange={(newPadding) => setAttributes({ padding: newPadding })}
+              onChange={(newPadding) => setAttributes({ padding: newPadding })}
               min={0}
               max={50}
             />
