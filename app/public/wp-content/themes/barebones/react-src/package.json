@@ -3,10 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@devloco\/react-scripts-wptheme": "^3.4.1-wp.1",
-        "@testing-library\/jest-dom": "^4.2.4",
-        "@testing-library\/react": "^9.5.0",
-        "@testing-library\/user-event": "^7.2.1",
+        "16": "^0.0.2",
+        "@devloco/react-scripts-wptheme": "^3.4.1-wp.1",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
@@ -18,7 +19,7 @@
         "build": "wptheme-scripts build",
         "start": "wptheme-scripts start",
         "wpbuild": "wptheme-scripts wpbuild",
-        "wpstart": "wptheme-scripts wpstart"
+        "wpstart": "set NODE_OPTIONS=--openssl-legacy-provider && wptheme-scripts wpstart"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -35,6 +36,6 @@
             "last 1 safari version"
         ]
     },
-    "homepage": "\/wp-content\/themes\/barebones",
-    "browserLaunchTo": "http:\/\/localhost:10022"
+    "homepage": "/wp-content/themes/barebones",
+    "browserLaunchTo": "http://localhost:10022"
 }
