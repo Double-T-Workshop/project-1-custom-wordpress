@@ -1,21 +1,26 @@
 <?php
-// Enqueue React App Scripts and Styles
 function enqueue_react_app() {
-    // Example JavaScript file from React build
-    wp_enqueue_script(
-        'react-app',
-        get_template_directory_uri() . '/static/js/main.js', // Adjust path as needed
-        array(), // Dependencies (you can add 'react', 'wp-element' if needed)
-        filemtime(get_template_directory() . '/static/js/main.js'), // Versioning
-        true // Load in footer
-    );
+    // Locate the main JavaScript file
+    $js_files = glob(get_template_directory() . '/static/js/main.*.js');
+    if ($js_files) {
+        wp_enqueue_script(
+            'react-app',
+            get_template_directory_uri() . '/static/js/' . basename($js_files[0]),
+            array(),
+            filemtime($js_files[0]),
+            true
+        );
+    }
 
-    // Example CSS file from React build
-    wp_enqueue_style(
-        'react-app-styles',
-        get_template_directory_uri() . '/static/css/main.css', // Adjust path as needed
-        array(),
-        filemtime(get_template_directory() . '/static/css/main.css')
-    );
+    // Locate the main CSS file
+    $css_files = glob(get_template_directory() . '/static/css/main.*.css');
+    if ($css_files) {
+        wp_enqueue_style(
+            'react-app-styles',
+            get_template_directory_uri() . '/static/css/' . basename($css_files[0]),
+            array(),
+            filemtime($css_files[0])
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'enqueue_react_app');
