@@ -1,0 +1,23 @@
+{
+  "apiVersion": 1,
+  "name": "custom/block-three",
+  "title": "Custom Block three",
+  "category": "common",
+  "icon": "smiley",
+  "description": "Block three.",
+  "supports": {
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "editorScript": "file:./index.js"
+}
