@@ -17,6 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./src/Header.js");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./src/Footer.js");
 /* harmony import */ var _Posts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Posts */ "./src/Posts.js");
+/* harmony import */ var _Pages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Pages */ "./src/Pages.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
@@ -31,6 +32,7 @@ function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf 
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
 
 
 
@@ -69,7 +71,7 @@ var App = /*#__PURE__*/function (_Component) {
           background: darkTheme ? '#282c34' : '#f5f5f5',
           color: darkTheme ? 'white' : 'black'
         }
-      }, /*#__PURE__*/React.createElement(_Posts__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/React.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/React.createElement(_Posts__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/React.createElement(_Pages__WEBPACK_IMPORTED_MODULE_4__["default"], null)), /*#__PURE__*/React.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
         darkTheme: darkTheme
       }));
     }
@@ -186,6 +188,135 @@ var Header = /*#__PURE__*/function (_Component) {
   }]);
 }(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Component);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+
+/***/ }),
+
+/***/ "./src/Pages.js":
+/*!**********************!*\
+  !*** ./src/Pages.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
+function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+var Pages = /*#__PURE__*/function (_Component) {
+  function Pages() {
+    var _this;
+    _classCallCheck(this, Pages);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    _this = _callSuper(this, Pages, [].concat(args));
+    _defineProperty(_this, "state", {
+      pages: [],
+      isLoading: true,
+      error: null
+    });
+    // WebSocket instance variable
+    _defineProperty(_this, "ws", null);
+    _defineProperty(_this, "fetchPages", function () {
+      fetch('http://localhost:10022/wp-json/wp/v2/pages').then(function (response) {
+        if (!response.ok) {
+          throw new Error('Something went wrong while fetching pages');
+        }
+        return response.json();
+      }).then(function (pages) {
+        return _this.setState({
+          pages: pages,
+          isLoading: false
+        });
+      })["catch"](function (error) {
+        return _this.setState({
+          error: error,
+          isLoading: false
+        });
+      });
+    });
+    return _this;
+  }
+  _inherits(Pages, _Component);
+  return _createClass(Pages, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+      // Initial data fetch
+      this.fetchPages();
+
+      // Initialize WebSocket connection
+      this.ws = new WebSocket('http://localhost:10022/'); // Replace YOUR_PORT with your WebSocket port
+
+      // Event listener for receiving messages
+      this.ws.onmessage = function (event) {
+        var message = JSON.parse(event.data);
+        // Check if the message is about pages update
+        if (message.type === 'page_update') {
+          // Re-fetch pages when an update event is received
+          _this2.fetchPages();
+        }
+      };
+
+      // Error handling for WebSocket
+      this.ws.onerror = function (error) {
+        console.error("WebSocket Error:", error);
+      };
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      // Close WebSocket connection on unmount
+      if (this.ws) {
+        this.ws.close();
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+        pages = _this$state.pages,
+        isLoading = _this$state.isLoading,
+        error = _this$state.error;
+      if (error) {
+        return /*#__PURE__*/React.createElement("div", null, "Error: ", error.message);
+      }
+      if (isLoading) {
+        return /*#__PURE__*/React.createElement("div", null, "Loading...");
+      }
+      return /*#__PURE__*/React.createElement("div", null, pages.map(function (page) {
+        return /*#__PURE__*/React.createElement("article", {
+          key: page.id
+        }, /*#__PURE__*/React.createElement("h2", {
+          dangerouslySetInnerHTML: {
+            __html: page.title.rendered
+          }
+        }), /*#__PURE__*/React.createElement("div", {
+          dangerouslySetInnerHTML: {
+            __html: page.content.rendered
+          }
+        }));
+      }));
+    }
+  }]);
+}(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Component);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Pages);
 
 /***/ }),
 

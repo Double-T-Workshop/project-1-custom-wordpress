@@ -2,6 +2,7 @@ import { Component } from '@wordpress/element';
 import Header from './Header';
 import Footer from './Footer';
 import Posts from './Posts';
+import Pages from './Pages';
 
 export default class App extends Component {
     state = {
@@ -22,6 +23,7 @@ export default class App extends Component {
                 <main style={{ padding: '20px', background: darkTheme ? '#282c34' : '#f5f5f5', color: darkTheme ? 'white' : 'black' }}>
                     {/* Main content goes here */}
                     <Posts />
+                    <Pages />
                 </main>
                 <Footer darkTheme={darkTheme} />
             </div>
