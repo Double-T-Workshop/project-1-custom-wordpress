@@ -68,7 +68,7 @@ class Posts extends Component {
                 {posts.map(post => (
                     <article key={post.id}>
                         <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                        <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+                        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
                     </article>
                 ))}
             </div>

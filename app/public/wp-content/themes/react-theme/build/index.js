@@ -438,7 +438,7 @@ var Posts = /*#__PURE__*/function (_Component) {
           }
         }), /*#__PURE__*/React.createElement("div", {
           dangerouslySetInnerHTML: {
-            __html: post.excerpt.rendered
+            __html: post.content.rendered
           }
         }));
       }));
