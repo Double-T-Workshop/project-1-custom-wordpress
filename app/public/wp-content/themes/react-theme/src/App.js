@@ -1,16 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import { useEffect } from 'react';
-
-const App =() => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:10022//wp-json/wp/v2/posts')
-    .then((response) => response.json())
-  })
+import { Component } from '@wordpress/element';
+export default class App extends Component {
+  render() {
+    return (
+      <div> 
+        <h1>Hello, WordPress and React!</h1>
+        {/* Your React components will go here */}
+      </div>
+);
+    }
 }
-
 
 // function App() {
 //   return (
@@ -33,4 +31,4 @@ const App =() => {
 //   );
 // }
 
-export default App;
+
