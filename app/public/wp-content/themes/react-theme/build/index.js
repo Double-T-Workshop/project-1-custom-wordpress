@@ -360,6 +360,26 @@ var Posts = /*#__PURE__*/function (_Component) {
       isLoading: true,
       error: null
     });
+    // WebSocket instance variable
+    _defineProperty(_this, "ws", null);
+    _defineProperty(_this, "fetchPosts", function () {
+      fetch('http://localhost:10022/wp-json/wp/v2/posts').then(function (response) {
+        if (!response.ok) {
+          throw new Error('Something went wrong while fetching posts');
+        }
+        return response.json();
+      }).then(function (posts) {
+        return _this.setState({
+          posts: posts,
+          isLoading: false
+        });
+      })["catch"](function (error) {
+        return _this.setState({
+          error: error,
+          isLoading: false
+        });
+      });
+    });
     return _this;
   }
   _inherits(Posts, _Component);
@@ -367,22 +387,34 @@ var Posts = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
-      fetch('http://localhost:10022/wp-json/wp/v2/posts').then(function (response) {
-        if (!response.ok) {
-          throw new Error('Something went wrong while fetching posts');
+      // Initial data fetch
+      this.fetchPosts();
+
+      // Initialize WebSocket connection
+      this.ws = new WebSocket('http://localhost:10022/'); // Replace YOUR_PORT with your WebSocket port
+
+      // Event listener for receiving messages
+      this.ws.onmessage = function (event) {
+        var message = JSON.parse(event.data);
+        // Check if the message is about posts update
+        if (message.type === 'post_update') {
+          // Re-fetch posts when an update event is received
+          _this2.fetchPosts();
         }
-        return response.json();
-      }).then(function (posts) {
-        return _this2.setState({
-          posts: posts,
-          isLoading: false
-        });
-      })["catch"](function (error) {
-        return _this2.setState({
-          error: error,
-          isLoading: false
-        });
-      });
+      };
+
+      // Error handling for WebSocket
+      this.ws.onerror = function (error) {
+        console.error("WebSocket Error:", error);
+      };
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      // Close WebSocket connection on unmount
+      if (this.ws) {
+        this.ws.close();
+      }
     }
   }, {
     key: "render",

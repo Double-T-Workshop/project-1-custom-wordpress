@@ -7,7 +7,40 @@ class Posts extends Component {
         error: null,
     };
 
+    // WebSocket instance variable
+    ws = null;
+
     componentDidMount() {
+        // Initial data fetch
+        this.fetchPosts();
+
+        // Initialize WebSocket connection
+        this.ws = new WebSocket('http://localhost:10022/'); // Replace YOUR_PORT with your WebSocket port
+
+        // Event listener for receiving messages
+        this.ws.onmessage = (event) => {
+            const message = JSON.parse(event.data);
+            // Check if the message is about posts update
+            if (message.type === 'post_update') {
+                // Re-fetch posts when an update event is received
+                this.fetchPosts();
+            }
+        };
+
+        // Error handling for WebSocket
+        this.ws.onerror = (error) => {
+            console.error("WebSocket Error:", error);
+        };
+    }
+
+    componentWillUnmount() {
+        // Close WebSocket connection on unmount
+        if (this.ws) {
+            this.ws.close();
+        }
+    }
+
+    fetchPosts = () => {
         fetch('http://localhost:10022/wp-json/wp/v2/posts')
             .then(response => {
                 if (!response.ok) {
@@ -17,7 +50,7 @@ class Posts extends Component {
             })
             .then(posts => this.setState({ posts, isLoading: false }))
             .catch(error => this.setState({ error, isLoading: false }));
-    }
+    };
 
     render() {
         const { posts, isLoading, error } = this.state;
