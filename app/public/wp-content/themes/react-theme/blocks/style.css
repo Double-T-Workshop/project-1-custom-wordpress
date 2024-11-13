@@ -1,9 +1,0 @@
-/* style.css and editor.css */
-.my-two-column-block {
-    display: flex;
-    gap: 20px;
-}
-
-.my-two-column-block .column {
-    flex: 1;
-}
