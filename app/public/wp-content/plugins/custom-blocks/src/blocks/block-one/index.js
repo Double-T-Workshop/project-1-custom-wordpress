@@ -20,3 +20,6 @@ wp.blocks.registerBlockType("custom/block-one", {
     );
   },
 });
+
+
+P
