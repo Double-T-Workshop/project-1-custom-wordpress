@@ -11,9 +11,10 @@ wp-content/cache/
 wp-content/upgrade/
 
 # Plugins and themes
-wp-content/plugins/
-wp-content/themes/*
+wp-content/plugins/*
+!wp-content/plugins/yia-blocks/
 wp-content/plugins/advanced-custom-fields/
+
 
 # Uncomment if developing a custom theme or plugin
 # !wp-content/themes/your-custom-theme/
