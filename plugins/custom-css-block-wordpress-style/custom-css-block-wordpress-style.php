@@ -25,5 +25,5 @@ function custom_css_block_with_wordpress_style_enqueue() {
   );
 }
 
-add_action('enqueue_block_editor_assets', 'custom_css_block_with_wordpress_style_enqueue');
+add_action( 'enqueue_block_editor_assets', 'custom_css_block_with_wordpress_style_enqueue' );
 

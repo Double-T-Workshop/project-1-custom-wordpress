@@ -1,5 +1,5 @@
 {
-  "name": "custom-block-with-inputs",
+  "name": "custom-blocks",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",

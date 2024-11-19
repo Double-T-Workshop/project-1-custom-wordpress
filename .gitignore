@@ -1,25 +1,32 @@
-# Logs
-logs
+# WordPress core files
+wp-admin/
+wp-includes/
+
+# Configuration files
+wp-config.php
+
+# Content and cache
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# Plugins and themes
+wp-content/plugins/
+wp-content/themes/*
+
+# Uncomment if developing a custom theme or plugin
+# !wp-content/themes/your-custom-theme/
+# !wp-content/plugins/your-custom-plugin/
+
+# Logs, backups, and miscellaneous
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+*.sql
+*.tar.gz
+*.zip
+backup/
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-coverage
+Thumbs.db
+
+# Dependencies
+vendor/
+node_modules/

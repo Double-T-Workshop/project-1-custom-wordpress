@@ -3,7 +3,7 @@ const { InspectorControls, ColorPalette } = wp.blockEditor;
 const { PanelBody, RangeControl } = wp.components;
 const { useState } = wp.element;
 
-registerBlockType("your-plugin/your-custom-block", {
+registerBlockType("custom/custom-css-block", {
   title: "Custom Block",
   icon: "smiley",
   category: "common",
