@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
     function register_custom_blocks() {
         $blocks = ['block-one', 'block-two', 'block-three']; // your block name, need to update based on the folders inside this blocks
         foreach ($blocks as $block) {
-            register_block_type(__DIR__ . "/src/blocks/$block");
+            register_block_type(__DIR__ . "/src/custom-blocks/$block");
         }
     }
     add_action('init', 'register_custom_blocks');
