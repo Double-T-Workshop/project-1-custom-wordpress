@@ -1,0 +1,25 @@
+{
+  "name": "block",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/blocks": "^13.10.0",
+    "@wordpress/components": "^28.10.0",
+    "@wordpress/editor": "^14.10.0",
+    "@wordpress/element": "^6.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babel-loader": "^9.2.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
