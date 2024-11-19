@@ -1,7 +1,7 @@
 {
   "apiVersion": 1,
   "name": "custom/block-one",
-  "title": "Custom Block one",
+  "title": "Custom Block One",
   "category": "common",
   "icon": "smiley",
   "description": "Block one",
@@ -19,5 +19,22 @@
       "margin": true
     }
   },
-  "editorScript": "file:./index.js"
+  "attributes": {
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "editorStyle": "file:./editor.css"
 }

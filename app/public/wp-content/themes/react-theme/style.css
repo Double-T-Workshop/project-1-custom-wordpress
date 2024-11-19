@@ -10,3 +10,23 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, custom-background
 Text Domain: yia-react-theme
 */
+
+.is-style-default {
+    border-radius: 10px;
+    background-color: aquamarine;
+}
+
+ .erbjuder-banner {
+    text-align: center;
+ }
+
+ .pdf-block {
+    width: 700px;
+ }
+
+ .pdf-btn a {
+    color: black;
+    border: 2px solid black; /* Combining border width and color */
+    background-color: white; /* Optional: Set background to transparent */
+    cursor: pointer; 
+}
