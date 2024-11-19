@@ -7,16 +7,15 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/blocks/block-one/index.js":
 /*!***************************************!*\
   !*** ./src/blocks/block-one/index.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ \"@wordpress/block-editor\");\n/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);\n\nwp.blocks.registerBlockType(\"custom/block-one\", {\n  edit: function edit() {\n    var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();\n    return /*#__PURE__*/React.createElement(\"div\", blockProps, /*#__PURE__*/React.createElement(\"p\", null, \"Custom Block 1 - Editable content here.\"));\n  },\n  save: function save() {\n    var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save();\n    return /*#__PURE__*/React.createElement(\"div\", blockProps, /*#__PURE__*/React.createElement(\"p\", null, \"Custom Block 1 - Saved content here.\"));\n  }\n});\n\n//# sourceURL=webpack://custom-blocks/./src/blocks/block-one/index.js?");
+eval("// import { useBlockProps } from \"@wordpress/block-editor\";\n\n// wp.blocks.registerBlockType(\"custom/block-one\", {\n//   edit() {\n//     const blockProps = useBlockProps();\n\n//     return (\n//       <div {...blockProps}>\n//         <p>Custom Block 1 - Editable content here.</p>\n//       </div>\n//     );\n//   },\n//   save() {\n//     const blockProps = useBlockProps.save();\n\n//     return (\n//       <div {...blockProps}>\n//         <p>Custom Block 1 - Saved content here.</p>\n//       </div>\n//     );\n//   },\n// });\n\nwp.blocks.registerBlockType(\"custom/block-one\", {\n  attributes: {\n    imageUrl: {\n      type: \"string\",\n      \"default\": \"\"\n    },\n    imageAlt: {\n      type: \"string\",\n      \"default\": \"\"\n    },\n    content: {\n      type: \"string\",\n      source: \"html\",\n      selector: \"p\"\n    }\n  },\n  edit: function edit(_ref) {\n    var attributes = _ref.attributes,\n      setAttributes = _ref.setAttributes;\n    var imageUrl = attributes.imageUrl,\n      imageAlt = attributes.imageAlt,\n      content = attributes.content;\n    var blockProps = wp.blockEditor.useBlockProps();\n    var onImageSelect = function onImageSelect(media) {\n      setAttributes({\n        imageUrl: media.url,\n        imageAlt: media.alt\n      });\n    };\n    return /*#__PURE__*/React.createElement(\"div\", blockProps, /*#__PURE__*/React.createElement(wp.blockEditor.InspectorControls, null, /*#__PURE__*/React.createElement(wp.components.PanelBody, {\n      title: \"Image Settings\"\n    }, /*#__PURE__*/React.createElement(wp.blockEditor.MediaUploadCheck, null, /*#__PURE__*/React.createElement(wp.blockEditor.MediaUpload, {\n      onSelect: onImageSelect,\n      allowedTypes: [\"image\"],\n      render: function render(_ref2) {\n        var open = _ref2.open;\n        return /*#__PURE__*/React.createElement(wp.components.Button, {\n          onClick: open,\n          variant: \"secondary\"\n        }, imageUrl ? \"Change Image\" : \"Select Image\");\n      }\n    })))), /*#__PURE__*/React.createElement(\"div\", {\n      className: \"image-text-block\"\n    }, imageUrl && /*#__PURE__*/React.createElement(\"img\", {\n      src: imageUrl,\n      alt: imageAlt\n    }), /*#__PURE__*/React.createElement(wp.blockEditor.RichText, {\n      tagName: \"p\",\n      value: content,\n      onChange: function onChange(newContent) {\n        return setAttributes({\n          content: newContent\n        });\n      },\n      placeholder: \"Enter text here...\"\n    })));\n  },\n  save: function save(_ref3) {\n    var attributes = _ref3.attributes;\n    var imageUrl = attributes.imageUrl,\n      imageAlt = attributes.imageAlt,\n      content = attributes.content;\n    var blockProps = wp.blockEditor.useBlockProps.save();\n    return /*#__PURE__*/React.createElement(\"div\", blockProps, imageUrl && /*#__PURE__*/React.createElement(\"img\", {\n      src: imageUrl,\n      alt: imageAlt\n    }), /*#__PURE__*/React.createElement(wp.blockEditor.RichText.Content, {\n      tagName: \"p\",\n      value: content\n    }));\n  }\n});\n\n//# sourceURL=webpack://custom-blocks/./src/blocks/block-one/index.js?");
 
 /***/ }),
 
@@ -26,6 +25,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wor
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ \"@wordpress/block-editor\");\n/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);\n\nwp.blocks.registerBlockType(\"custom/block-three\", {\n  edit: function edit() {\n    var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();\n    return /*#__PURE__*/React.createElement(\"div\", blockProps, /*#__PURE__*/React.createElement(\"p\", null, \"Custom Block 3 - Editable content here.\"));\n  },\n  save: function save() {\n    var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save();\n    return /*#__PURE__*/React.createElement(\"div\", blockProps, /*#__PURE__*/React.createElement(\"p\", null, \"Custom Block 3 - Saved content here.\"));\n  }\n});\n\n//# sourceURL=webpack://custom-blocks/./src/blocks/block-three/index.js?");
 
 /***/ }),
@@ -36,6 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wor
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ \"@wordpress/block-editor\");\n/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);\n\nwp.blocks.registerBlockType(\"custom/block-two\", {\n  edit: function edit() {\n    var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)();\n    return /*#__PURE__*/React.createElement(\"div\", blockProps, /*#__PURE__*/React.createElement(\"p\", null, \"Custom Block 2 - Editable content here.\"));\n  },\n  save: function save() {\n    var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save();\n    return /*#__PURE__*/React.createElement(\"div\", blockProps, /*#__PURE__*/React.createElement(\"p\", null, \"Custom Block 2 - Saved content here.\"));\n  }\n});\n\n//# sourceURL=webpack://custom-blocks/./src/blocks/block-two/index.js?");
 
 /***/ }),
@@ -46,7 +47,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wor
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blocks_block_one__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/block-one */ \"./src/blocks/block-one/index.js\");\n/* harmony import */ var _blocks_block_two__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/block-two */ \"./src/blocks/block-two/index.js\");\n/* harmony import */ var _blocks_block_three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/block-three */ \"./src/blocks/block-three/index.js\");\n// src/index.js\n\n\n\n\n//# sourceURL=webpack://custom-blocks/./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blocks_block_one__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/block-one */ \"./src/blocks/block-one/index.js\");\n/* harmony import */ var _blocks_block_one__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_blocks_block_one__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _blocks_block_two__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/block-two */ \"./src/blocks/block-two/index.js\");\n/* harmony import */ var _blocks_block_three__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/block-three */ \"./src/blocks/block-three/index.js\");\n// src/index.js\n\n\n\n\n//# sourceURL=webpack://custom-blocks/./src/index.js?");
 
 /***/ }),
 
@@ -56,6 +58,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blo
   \*************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = wp.blockEditor;
 
 /***/ })
