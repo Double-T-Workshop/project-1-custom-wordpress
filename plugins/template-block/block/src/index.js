@@ -18,13 +18,11 @@ registerBlockType("custom/block", {
     };
 
     return (
-      <>
-        <RichText
-          tagName="p"
-          onChange={onChangeContent}
-          value={attributes.content}
-        />
-      </>
+      <RichText
+        tagName="p"
+        onChange={onChangeContent}
+        value={attributes.content}
+      />
     );
   },
   save({ attributes }) {
