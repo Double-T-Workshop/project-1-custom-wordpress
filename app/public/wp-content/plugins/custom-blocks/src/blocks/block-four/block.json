@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "custom/block-four",
+    "title": "Custom Block Four",
+    "category": "common",
+    "icon": "smiley",
+    "description": "A custom block with a video background and overlay text.",
+    "keywords": ["video", "background", "text"],
+    "attributes": {
+      "videoUrl": {
+        "type": "string",
+        "default": ""
+      },
+      "videoAlt": {
+        "type": "string",
+        "default": ""
+      },
+      "overlayText": {
+        "type": "string",
+        "source": "html",
+        "selector": "h2"
+      }
+    },
+    "supports": {
+      "align": true,
+      "anchor": true,
+      "color": {
+        "text": true,
+        "background": true
+      },
+      "spacing": {
+        "padding": true,
+        "margin": true
+      }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css"
+  }
+  
