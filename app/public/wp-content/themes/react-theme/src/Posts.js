@@ -14,23 +14,35 @@ class Posts extends Component {
         // Initial data fetch
         this.fetchPosts();
 
-        // Initialize WebSocket connection
-        this.ws = new WebSocket('http://localhost:10022/'); // Replace YOUR_PORT with your WebSocket port
+        try {
+            // Initialize WebSocket connection
+            this.ws = new WebSocket('http://localhost:10022'); // Ensure this matches your WebSocket server setup
 
-        // Event listener for receiving messages
-        this.ws.onmessage = (event) => {
-            const message = JSON.parse(event.data);
-            // Check if the message is about posts update
-            if (message.type === 'post_update') {
-                // Re-fetch posts when an update event is received
-                this.fetchPosts();
-            }
-        };
+            // Event listener for receiving messages
+            this.ws.onmessage = (event) => {
+                try {
+                    const message = JSON.parse(event.data);
+                    // Check if the message is about posts update
+                    if (message.type === 'post_update') {
+                        // Re-fetch posts when an update event is received
+                        this.fetchPosts();
+                    }
+                } catch (err) {
+                    console.error("Error parsing WebSocket message:", err);
+                }
+            };
 
-        // Error handling for WebSocket
-        this.ws.onerror = (error) => {
-            console.error("WebSocket Error:", error);
-        };
+            // Error handling for WebSocket
+            this.ws.onerror = (error) => {
+                console.error("WebSocket Error:", error);
+            };
+
+            this.ws.onclose = () => {
+                console.warn("WebSocket connection closed");
+            };
+        } catch (err) {
+            console.error("WebSocket initialization failed:", err);
+        }
     }
 
     componentWillUnmount() {
@@ -41,15 +53,15 @@ class Posts extends Component {
     }
 
     fetchPosts = () => {
-        fetch('http://localhost:10022/wp-json/wp/v2/posts')
-            .then(response => {
+        fetch('http://localhost:10022/wp-json/wp/v2/posts') // Ensure your WordPress REST API is running
+            .then((response) => {
                 if (!response.ok) {
                     throw new Error('Something went wrong while fetching posts');
                 }
                 return response.json();
             })
-            .then(posts => this.setState({ posts, isLoading: false }))
-            .catch(error => this.setState({ error, isLoading: false }));
+            .then((posts) => this.setState({ posts, isLoading: false }))
+            .catch((error) => this.setState({ error, isLoading: false }));
     };
 
     render() {
@@ -65,7 +77,7 @@ class Posts extends Component {
 
         return (
             <div>
-                {posts.map(post => (
+                {posts.map((post) => (
                     <article key={post.id}>
                         <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                         <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />

@@ -5,3 +5,16 @@ function my_react_theme_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'my_react_theme_scripts');
+
+
+
+function my_react_theme_register_nav_menu() {
+    register_nav_menu('primary', __('Primary Menu'));
+}
+add_action('after_setup_theme', 'my_react_theme_register_nav_menu');
+
+
+add_filter('register_nav_menu_item', function($location, $args) {
+    register_nav_menu($location, $args);
+    return $location;
+}, 10, 2);
