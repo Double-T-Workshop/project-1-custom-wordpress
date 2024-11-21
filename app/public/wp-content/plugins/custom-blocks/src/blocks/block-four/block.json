@@ -6,7 +6,6 @@
     "category": "common",
     "icon": "smiley",
     "description": "A custom block with a video background and overlay text.",
-    "keywords": ["video", "background", "text"],
     "attributes": {
       "videoUrl": {
         "type": "string",
