@@ -79,13 +79,21 @@
 // export default Pages;
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Pages = () => {
-    const { slug } = useParams(); // Get the slug from the URL
+    const location = useLocation(); // Get current location
+
+    console.log(location); // Log the current location for debugging
+
+
+    const slug = location.pathname.split("/").pop(); 
     const [page, setPage] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    console.log(slug);
+    
 
     useEffect(() => {
         if (slug) {

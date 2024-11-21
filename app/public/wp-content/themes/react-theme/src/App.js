@@ -33,30 +33,25 @@
 
 import { ApolloProvider } from '@apollo/client';
 import client from './apollo-client';
-import { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Pages from './Pages';
+import { useState } from 'react';
 
-export default class App extends Component {
-    state = {
-        darkTheme: true,
+export default function App() {
+    const [darkTheme, setDarkTheme] = useState(true); // Replace class state with useState
+
+    const toggleTheme = () => {
+        setDarkTheme((prevTheme) => !prevTheme); // Toggle theme
     };
 
-    toggleTheme = () => {
-        this.setState((prevState) => ({
-            darkTheme: !prevState.darkTheme,
-        }));
-    };
+    
 
-    render() {
-        const { darkTheme } = this.state;
-
-        return (
-            <ApolloProvider client={client}>
+    return (
+        <ApolloProvider client={client}>
             <Router>
-                <Header darkTheme={darkTheme} toggleTheme={this.toggleTheme} />
+                <Header darkTheme={darkTheme} toggleTheme={toggleTheme} />
                 <main
                     style={{
                         padding: '20px',
@@ -64,12 +59,11 @@ export default class App extends Component {
                         color: darkTheme ? 'white' : 'black',
                     }}
                 >
-                    <Pages slug="sample-page" />
+                    <Pages />
                 </main>
                 <Footer darkTheme={darkTheme} />
             </Router>
-            </ApolloProvider>
-        );
-    }
+        </ApolloProvider>
+    );
 }
 

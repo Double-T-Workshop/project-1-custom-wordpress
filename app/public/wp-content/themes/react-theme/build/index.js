@@ -5077,26 +5077,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/context/ApolloProvider.js");
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apollo-client */ "./src/apollo-client.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header */ "./src/Header.js");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./src/Footer.js");
-/* harmony import */ var _Pages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Pages */ "./src/Pages.js");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
-function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
-function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
-function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
-function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
-function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
-function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
-function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./src/Header.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./src/Footer.js");
+/* harmony import */ var _Pages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Pages */ "./src/Pages.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 // import { Component } from '@wordpress/element';
 // import Header from './Header';
 // import Footer from './Footer';
@@ -5137,51 +5129,32 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 
-var App = /*#__PURE__*/function (_Component) {
-  function App() {
-    var _this;
-    _classCallCheck(this, App);
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    _this = _callSuper(this, App, [].concat(args));
-    _defineProperty(_this, "state", {
-      darkTheme: true
-    });
-    _defineProperty(_this, "toggleTheme", function () {
-      _this.setState(function (prevState) {
-        return {
-          darkTheme: !prevState.darkTheme
-        };
-      });
-    });
-    return _this;
-  }
-  _inherits(App, _Component);
-  return _createClass(App, [{
-    key: "render",
-    value: function render() {
-      var darkTheme = this.state.darkTheme;
-      return /*#__PURE__*/React.createElement(_apollo_client__WEBPACK_IMPORTED_MODULE_5__.ApolloProvider, {
-        client: _apollo_client__WEBPACK_IMPORTED_MODULE_0__["default"]
-      }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, null, /*#__PURE__*/React.createElement(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        darkTheme: darkTheme,
-        toggleTheme: this.toggleTheme
-      }), /*#__PURE__*/React.createElement("main", {
-        style: {
-          padding: '20px',
-          background: darkTheme ? '#282c34' : '#f5f5f5',
-          color: darkTheme ? 'white' : 'black'
-        }
-      }, /*#__PURE__*/React.createElement(_Pages__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        slug: "sample-page"
-      })), /*#__PURE__*/React.createElement(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        darkTheme: darkTheme
-      })));
-    }
-  }]);
-}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+function App() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(true),
+    _useState2 = _slicedToArray(_useState, 2),
+    darkTheme = _useState2[0],
+    setDarkTheme = _useState2[1]; // Replace class state with useState
 
+  var toggleTheme = function toggleTheme() {
+    setDarkTheme(function (prevTheme) {
+      return !prevTheme;
+    }); // Toggle theme
+  };
+  return /*#__PURE__*/React.createElement(_apollo_client__WEBPACK_IMPORTED_MODULE_5__.ApolloProvider, {
+    client: _apollo_client__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, null, /*#__PURE__*/React.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    darkTheme: darkTheme,
+    toggleTheme: toggleTheme
+  }), /*#__PURE__*/React.createElement("main", {
+    style: {
+      padding: '20px',
+      background: darkTheme ? '#282c34' : '#f5f5f5',
+      color: darkTheme ? 'white' : 'black'
+    }
+  }, /*#__PURE__*/React.createElement(_Pages__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/React.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    darkTheme: darkTheme
+  })));
+}
 
 /***/ }),
 
@@ -5543,8 +5516,11 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 var Pages = function Pages() {
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useParams)(),
-    slug = _useParams.slug; // Get the slug from the URL
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useLocation)(); // Get current location
+
+  console.log(location); // Log the current location for debugging
+
+  var slug = location.pathname.split("/").pop();
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     page = _useState2[0],
@@ -5557,6 +5533,7 @@ var Pages = function Pages() {
     _useState6 = _slicedToArray(_useState5, 2),
     error = _useState6[0],
     setError = _useState6[1];
+  console.log(slug);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (slug) {
       fetchPageBySlug(slug);
