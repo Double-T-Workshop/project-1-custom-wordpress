@@ -5075,13 +5075,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ App)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./src/Header.js");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./src/Footer.js");
-/* harmony import */ var _Pages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Pages */ "./src/Pages.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/context/ApolloProvider.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apollo-client */ "./src/apollo-client.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header */ "./src/Header.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./src/Footer.js");
+/* harmony import */ var _Pages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Pages */ "./src/Pages.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
@@ -5134,6 +5135,8 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 
+
+
 var App = /*#__PURE__*/function (_Component) {
   function App() {
     var _this;
@@ -5159,7 +5162,9 @@ var App = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var darkTheme = this.state.darkTheme;
-      return /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      return /*#__PURE__*/React.createElement(_apollo_client__WEBPACK_IMPORTED_MODULE_5__.ApolloProvider, {
+        client: _apollo_client__WEBPACK_IMPORTED_MODULE_0__["default"]
+      }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, null, /*#__PURE__*/React.createElement(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
         darkTheme: darkTheme,
         toggleTheme: this.toggleTheme
       }), /*#__PURE__*/React.createElement("main", {
@@ -5168,24 +5173,14 @@ var App = /*#__PURE__*/function (_Component) {
           background: darkTheme ? '#282c34' : '#f5f5f5',
           color: darkTheme ? 'white' : 'black'
         }
-      }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-        path: "/sample-page",
-        element: /*#__PURE__*/React.createElement(_Pages__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-      }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-        path: "/new-page",
-        element: /*#__PURE__*/React.createElement(_Pages__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-      }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-        path: "/hi-this-is-a-second-test-page",
-        element: /*#__PURE__*/React.createElement(_Pages__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-      }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-        path: "/privacy-policy",
-        element: /*#__PURE__*/React.createElement(_Pages__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-      }))), /*#__PURE__*/React.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/React.createElement(_Pages__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        slug: "sample-page"
+      })), /*#__PURE__*/React.createElement(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
         darkTheme: darkTheme
       })));
     }
   }]);
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Component);
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
 
 
 /***/ }),
@@ -5361,12 +5356,62 @@ function _taggedTemplateLiteral(e, t) { return t || (t = e.slice(0)), Object.fre
 
 // export default Navbar;
 
+// import { useQuery, gql } from '@apollo/client';
+// import { Link } from 'react-router-dom';
+// import client from './apollo-client';
+
+// // GraphQL query to fetch the primary menu
+// const GET_PRIMARY_MENU = gql`
+//   query GetPrimaryMenu {
+//     menu(id: "primary", idType: LOCATION) {
+//       menuItems {
+//         nodes {
+//           id
+//           label
+//           url
+//           parentId
+//         }
+//       }
+//     }
+//   }
+// `;
+
+// const Navbar = () => {
+//     const { loading, error, data } = useQuery(GET_PRIMARY_MENU, { client });
+
+//     if (loading) return <p>Loading...</p>;
+//     if (error) return <p>Error: {error.message}</p>;
+
+//     const menuItems = data.menu.menuItems.nodes;
+
+//     // Transform WordPress URLs to relative paths
+//     const transformUrl = (url) => {
+//         const wordpressBaseUrl = 'http://localhost:10022'; // Replace with your WordPress URL
+//         if (url.startsWith(wordpressBaseUrl)) {
+//             return url.replace(wordpressBaseUrl, '');
+//         }
+//         return url;
+//     };
+
+//     return (
+//         <nav>
+//             <ul>
+//                 {menuItems.map((item) => (
+//                     <li key={item.id}>
+//                         <Link to={transformUrl(item.url)}>{item.label}</Link>
+//                     </li>
+//                 ))}
+//             </ul>
+//         </nav>
+//     );
+// };
+
+// export default Navbar;
 
 
 
 
-// GraphQL query to fetch the primary menu
-var GET_PRIMARY_MENU = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_1__.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  query GetPrimaryMenu {\n    menu(id: \"primary\", idType: LOCATION) {\n      menuItems {\n        nodes {\n          id\n          label\n          url\n          parentId\n        }\n      }\n    }\n  }\n"])));
+var GET_PRIMARY_MENU = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_1__.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nquery GetPrimaryMenu {\n  menu(id: \"primary\", idType: LOCATION) {\n    menuItems {\n      nodes {\n        id\n        label\n        url\n        parentId\n      }\n    }\n  }\n}\n"])));
 var Navbar = function Navbar() {
   var _useQuery = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_2__.useQuery)(GET_PRIMARY_MENU, {
       client: _apollo_client__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -5377,14 +5422,12 @@ var Navbar = function Navbar() {
   if (loading) return /*#__PURE__*/React.createElement("p", null, "Loading...");
   if (error) return /*#__PURE__*/React.createElement("p", null, "Error: ", error.message);
   var menuItems = data.menu.menuItems.nodes;
-
-  // Transform WordPress URLs to relative paths
   var transformUrl = function transformUrl(url) {
     var wordpressBaseUrl = 'http://localhost:10022'; // Replace with your WordPress URL
     if (url.startsWith(wordpressBaseUrl)) {
-      return url.replace(wordpressBaseUrl, '');
+      return url.replace(wordpressBaseUrl, '').replace(/\/$/, ''); // Normalize URL
     }
-    return url;
+    return url.replace(/\/$/, ''); // Handle relative paths
   };
   return /*#__PURE__*/React.createElement("nav", null, /*#__PURE__*/React.createElement("ul", null, menuItems.map(function (item) {
     return /*#__PURE__*/React.createElement("li", {
@@ -5538,16 +5581,16 @@ var Pages = function Pages() {
     });
   };
   if (isLoading) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Loading...");
+    return /*#__PURE__*/React.createElement("div", null, "Loading...");
   }
   if (error) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Error: ", error.message);
+    return /*#__PURE__*/React.createElement("div", null, "Error: ", error.message);
   }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+  return /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("h1", {
     dangerouslySetInnerHTML: {
       __html: page.title.rendered
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     dangerouslySetInnerHTML: {
       __html: page.content.rendered
     }
@@ -17505,6 +17548,38 @@ function getApolloContext() {
  */
 var resetApolloContext = getApolloContext;
 //# sourceMappingURL=ApolloContext.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@apollo/client/react/context/ApolloProvider.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@apollo/client/react/context/ApolloProvider.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ApolloProvider: () => (/* binding */ ApolloProvider)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.mjs");
+/* harmony import */ var _utilities_globals_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utilities/globals/index.js */ "./node_modules/@apollo/client/utilities/globals/index.js");
+/* harmony import */ var rehackt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rehackt */ "./node_modules/rehackt/index.js");
+/* harmony import */ var _ApolloContext_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ApolloContext.js */ "./node_modules/@apollo/client/react/context/ApolloContext.js");
+
+
+
+
+var ApolloProvider = function (_a) {
+    var client = _a.client, children = _a.children;
+    var ApolloContext = (0,_ApolloContext_js__WEBPACK_IMPORTED_MODULE_2__.getApolloContext)();
+    var parentContext = rehackt__WEBPACK_IMPORTED_MODULE_1__.useContext(ApolloContext);
+    var context = rehackt__WEBPACK_IMPORTED_MODULE_1__.useMemo(function () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, parentContext), { client: client || parentContext.client });
+    }, [parentContext, client]);
+    (0,_utilities_globals_index_js__WEBPACK_IMPORTED_MODULE_0__.invariant)(context.client, 47);
+    return (rehackt__WEBPACK_IMPORTED_MODULE_1__.createElement(ApolloContext.Provider, { value: context }, children));
+};
+//# sourceMappingURL=ApolloProvider.js.map
 
 /***/ }),
 
