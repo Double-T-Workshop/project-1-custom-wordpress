@@ -111,7 +111,7 @@ const Pages = () => {
             })
             .then((data) => {
                 if (data.length > 0) {
-                    setPage(data[0]); // The API returns an array
+                    setPage(data[0]); 
                 } else {
                     throw new Error('Page not found');
                 }
