@@ -1,4 +1,8 @@
 // src/index.js
-import "./custom-blocks/block-one"; // update to your folder name
-import "./custom-blocks/block-two"; // update to your folder name
-import "./custom-blocks/block-three"; // update to your folder name
+// Dynamically import all block modules from a specific folder
+const blockContext = require.context("./custom-blocks", true, /index\.js$/);
+
+// Loop through and import each block dynamically
+blockContext.keys().forEach((block) => {
+  blockContext(block); // This will execute the block module
+});
