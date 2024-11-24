@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
  */
 // Register the custom block script and style
     function register_custom_blocks() {
-        $blocks = ['block-one', 'block-two', 'block-three'];
+        $blocks = ['news-slider', 'block-two', 'block-three'];
         foreach ($blocks as $block) {
             register_block_type(__DIR__ . "/src/blocks/$block");
         }

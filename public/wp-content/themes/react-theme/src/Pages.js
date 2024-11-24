@@ -76,7 +76,7 @@ class Pages extends Component {
         this.fetchPages();
 
         // Initialize WebSocket connection
-        this.ws = new WebSocket("http://react-web.local/"); // Replace YOUR_PORT with your WebSocket port
+        this.ws = new WebSocket("http://react-web.local/"); 
 
         // Event listener for receiving messages
         this.ws.onmessage = (event) => {
