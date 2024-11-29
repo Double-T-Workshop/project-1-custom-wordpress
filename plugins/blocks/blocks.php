@@ -39,15 +39,6 @@ if (!defined('ABSPATH')) {
             filemtime(plugin_dir_path(__FILE__) . "src/custom-blocks/$block/style.css")
         );
 
-
-       // Enqueue wordlist JavaScript
-       wp_enqueue_script(
-           'word-list-frontend',
-            plugins_url( 'frontend.js', __FILE__ ),
-            array(),
-            filemtime( plugin_dir_path( __FILE__ ) . 'frontend.js' ),
-            true
-       );
     }
     }
     add_action('init', 'register_custom_blocks');
@@ -64,3 +55,14 @@ if (!defined('ABSPATH')) {
       
     add_action( 'enqueue_block_editor_assets', 'custom_blocks_enqueue' );
      
+    // Enqueue frontend JavaScript
+    function enqueue_word_list_frontend_script() {
+         wp_enqueue_script(
+            'word-list-frontend',
+            plugins_url('wordlist.js', __FILE__),
+            array(),
+            filemtime(plugin_dir_path(__FILE__) . 'wordlist.js'),
+            true
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_word_list_frontend_script');
