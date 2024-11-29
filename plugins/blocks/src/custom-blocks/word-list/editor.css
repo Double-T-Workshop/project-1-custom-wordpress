@@ -1,0 +1,55 @@
+.word-list-block .alphabet-bar {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.word-list-block .alphabet-bar .alphabet {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.word-list-block .alphabet-bar .alphabet.active {
+    background: #2d9c56;
+    color: white;
+    border-color: #2d9c56;
+}
+
+.word-list-block .word-list-section {
+    display: none; /* Default hidden */
+    margin-bottom: 20px;
+}
+
+.word-list-block .word-list-section.active {
+    display: block;
+}
+
+.word-list-block .word-list-section h3 {
+    color: #2d9c56;
+    margin-bottom: 15px;
+}
+
+.word-list-block .word-list-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.word-list-block .word-item {
+    margin-bottom: 15px;
+}
+
+.word-list-block .word-term {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.word-list-block .word-description {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
