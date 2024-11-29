@@ -38,6 +38,16 @@ if (!defined('ABSPATH')) {
             array(),
             filemtime(plugin_dir_path(__FILE__) . "src/custom-blocks/$block/style.css")
         );
+
+
+       // Enqueue wordlist JavaScript
+       wp_enqueue_script(
+           'word-list-frontend',
+            plugins_url( 'frontend.js', __FILE__ ),
+            array(),
+            filemtime( plugin_dir_path( __FILE__ ) . 'frontend.js' ),
+            true
+       );
     }
     }
     add_action('init', 'register_custom_blocks');
