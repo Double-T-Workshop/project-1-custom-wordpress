@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
  */
 // Register the custom block script and style
     function register_custom_blocks() {
-        $blocks = ['block-one', 'block-two', 'block-three', 'block-four'];
+        $blocks = ['block-one', 'block-two', 'block-three', 'block-four', "contact-block"];
         foreach ($blocks as $block) {
             register_block_type(__DIR__ . "/src/blocks/$block");
         }
@@ -33,3 +33,6 @@ if (!defined('ABSPATH')) {
       }
       
       add_action( 'enqueue_block_editor_assets', 'custom_blocks_enqueue' );
+
+
+    
