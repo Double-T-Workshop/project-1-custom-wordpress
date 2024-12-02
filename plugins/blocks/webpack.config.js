@@ -20,6 +20,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/, // Regular expression to find CSS files
+        use: ["style-loader", "css-loader"], // Use these loaders for CSS
+      },
     ],
   },
   resolve: {

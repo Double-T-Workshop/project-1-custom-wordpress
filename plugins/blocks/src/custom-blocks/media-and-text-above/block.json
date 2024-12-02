@@ -1,0 +1,24 @@
+{
+  "apiVersion": 1,
+  "name": "custom/media-and-text-above",
+  "title": "Media & Text Above",
+  "category": "media",
+  "icon": "media-text",
+  "description": "Set Media as background and add text above",
+  "supports": {
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
+}

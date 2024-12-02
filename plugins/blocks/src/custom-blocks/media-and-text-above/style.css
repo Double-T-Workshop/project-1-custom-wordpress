@@ -1,0 +1,55 @@
+.custom-media-text-block {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  height: 400px;
+  overflow: hidden; /* ensures no overflow from the video */
+  z-index: 0;
+}
+
+.custom-media-text-block .content {
+  position: relative;
+  z-index: 1;
+  padding: 30px 50px;
+  margin: 10px;
+}
+
+.custom-media-text-block .text-position {
+  position: relative;
+  background-color: transparent;
+  padding: 0px 10px;
+  border-radius: 5px;
+  width: 100%;
+  min-height: 30px;
+  display: block; /* Ensure block-level behavior */
+  margin-bottom: 10px;
+}
+
+.custom-media-text-block .btn-read-more {
+  position: relative;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid white;
+  padding: 5px;
+  color: white;
+}
+
+.custom-media-text-block .btn-arrow-down {
+  position: absolute;
+  bottom: 5%;
+  right: 25%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+}
+
+.custom-media-text-block video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures the video covers the block area */
+  z-index: -1; /*makes sure the video stays behind the text/content */
+}
