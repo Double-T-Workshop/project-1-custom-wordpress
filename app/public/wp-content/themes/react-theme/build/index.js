@@ -5241,7 +5241,7 @@ var Footer = function Footer() {
   }, "IT-ordbok"))), /*#__PURE__*/React.createElement("div", {
     "class": "logo"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "/path-to-logo.png",
+    src: "/",
     alt: "Novo IT Logo",
     "class": "logo-image"
   })))));

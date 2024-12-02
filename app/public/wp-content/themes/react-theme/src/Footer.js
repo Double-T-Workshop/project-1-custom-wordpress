@@ -66,7 +66,7 @@ const Footer = () => {
       </ul>
       <div class="logo">
         <img
-          src="/path-to-logo.png"
+          src="/"
           alt="Novo IT Logo"
           class="logo-image"
         />
