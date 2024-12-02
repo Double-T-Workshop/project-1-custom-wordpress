@@ -1,0 +1,48 @@
+{
+    "apiVersion": 2,
+    "name": "custom/map-block",
+    "title": "Custom Map Block",
+    "category": "common",
+    "icon": "admin-site",
+    "description": "A custom block with two images (left and right) and a text block in the middle.",
+    "attributes": {
+      "leftImage": {
+        "type": "string",
+        "default": ""
+      },
+      "rightImage": {
+        "type": "string",
+        "default": ""
+      },
+      "headline": {
+        "type": "string",
+        "source": "html",
+        "selector": "h2",
+        "default": "Vi levererar globalt"
+      },
+      "description": {
+        "type": "string",
+        "source": "html",
+        "selector": "p",
+        "default": "Oavsett var ditt företag är baserat, kan vi leverera skräddarsydda IT-lösningar som möter dina behov."
+      }
+    },
+    "supports": {
+      "color": {
+        "text": true,
+        "background": true
+      },
+      "typography": {
+        "fontSize": true,
+        "lineHeight": true
+      },
+      "spacing": {
+        "padding": true,
+        "margin": true
+      },
+      "align": ["wide", "full"]
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css"
+  }
