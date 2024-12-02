@@ -5168,44 +5168,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
-function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
-function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
-function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
-function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
-function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
-function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
-function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+/* harmony import */ var _Footer_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Footer.css */ "./src/Footer.css");
+// import { Component } from '@wordpress/element';
 
-var Footer = /*#__PURE__*/function (_Component) {
-  function Footer() {
-    _classCallCheck(this, Footer);
-    return _callSuper(this, Footer, arguments);
-  }
-  _inherits(Footer, _Component);
-  return _createClass(Footer, [{
-    key: "render",
-    value: function render() {
-      var darkTheme = this.props.darkTheme;
-      var footerStyle = {
-        backgroundColor: darkTheme ? '#333' : '#EEE',
-        color: darkTheme ? 'white' : '#333',
-        padding: '20px',
-        textAlign: 'center'
-      };
-      return /*#__PURE__*/React.createElement("footer", {
-        style: footerStyle
-      }, "\xA9 ", new Date().getFullYear(), " My WP Theme");
-    }
-  }]);
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Component);
+// class Footer extends Component {
+//     render() {
+//         const { darkTheme } = this.props;
+//         const footerStyle = {
+//             backgroundColor: darkTheme ? '#333' : '#EEE',
+//             color: darkTheme ? 'white' : '#333',
+//             padding: '20px',
+//             textAlign: 'center',
+//         };
+//         return (
+//             <footer style={footerStyle}>
+//                 © {new Date().getFullYear()} My WP Theme
+//             </footer>
+//         );
+//     }
+// }
+
+// export default Footer;
+
+
+var Footer = function Footer() {
+  return /*#__PURE__*/React.createElement("footer", {
+    "class": "footer"
+  }, /*#__PURE__*/React.createElement("div", {
+    "class": "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    "class": "column"
+  }, /*#__PURE__*/React.createElement("iframe", {
+    title: "Location Map",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2135.8374062098546!2d18.054798215908436!3d59.342123381662096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d617ab0fedd%3A0x1a6d0ed5a2165c9!2sNorrtullsgatan%206%2C%20113%2029%20Stockholm%2C%20Sweden!5e0!3m2!1sen!2sus!4v1698228718752!5m2!1sen!2sus",
+    width: "300",
+    height: "200",
+    "class": "map",
+    allowFullScreen: "",
+    loading: "lazy"
+  })), /*#__PURE__*/React.createElement("div", {
+    "class": "column"
+  }, /*#__PURE__*/React.createElement("h3", {
+    "class": "heading"
+  }, "Adress"), /*#__PURE__*/React.createElement("p", null, "Novo IT AB"), /*#__PURE__*/React.createElement("p", null, "Norrtullsgatan 6"), /*#__PURE__*/React.createElement("p", null, "113 29 Stockholm"), /*#__PURE__*/React.createElement("p", null, "info@novoit.se"), /*#__PURE__*/React.createElement("p", null, "0707-918177")), /*#__PURE__*/React.createElement("div", {
+    "class": "column"
+  }, /*#__PURE__*/React.createElement("h3", {
+    "class": "heading"
+  }, "Sidor"), /*#__PURE__*/React.createElement("ul", {
+    "class": "list"
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/hem"
+  }, "Hem")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/tjanster"
+  }, "Tj\xE4nster")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/nyheter"
+  }, "Nyheter")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/villkor"
+  }, "Villkor")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/kontakt"
+  }, "Kontakt")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/webshop"
+  }, "Webshop")))), /*#__PURE__*/React.createElement("div", {
+    "class": "column"
+  }, /*#__PURE__*/React.createElement("h3", {
+    "class": "heading"
+  }, "Extra"), /*#__PURE__*/React.createElement("ul", {
+    "class": "list"
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/villkor"
+  }, "Allm\xE4nna villkor")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/it-ordbok"
+  }, "IT-ordbok"))), /*#__PURE__*/React.createElement("div", {
+    "class": "logo"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "/path-to-logo.png",
+    alt: "Novo IT Logo",
+    "class": "logo-image"
+  })))));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
 
 /***/ }),
@@ -5547,7 +5587,7 @@ var Pages = function Pages() {
       return response.json();
     }).then(function (data) {
       if (data.length > 0) {
-        setPage(data[0]); // The API returns an array
+        setPage(data[0]);
       } else {
         throw new Error('Page not found');
       }
@@ -5737,6 +5777,18 @@ var extras = {
 gql["default"] = gql;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (gql);
 //# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./src/Footer.css":
+/*!************************!*\
+  !*** ./src/Footer.css ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 

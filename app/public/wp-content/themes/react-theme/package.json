@@ -13,7 +13,7 @@
   "description": "",
   "devDependencies": {
     "@wordpress/element": "^6.11.0",
-    "@wordpress/scripts": "^30.4.0"
+    "@wordpress/scripts": "^30.5.1"
   },
   "dependencies": {
     "@apollo/client": "^3.11.10",

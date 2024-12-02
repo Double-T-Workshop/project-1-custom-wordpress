@@ -30,3 +30,71 @@ Text Domain: yia-react-theme
     background-color: white; /* Optional: Set background to transparent */
     cursor: pointer; 
 }
+
+/* Footer style */
+
+/* Footer General Styles */
+.footer {
+   background-color: #69a37f;
+   color: #ffffff;
+   padding: 20px 0;
+ }
+ 
+ .container {
+   display: flex;
+   justify-content: space-between;
+   max-width: 1200px;
+   margin: 0 auto;
+   flex-wrap: wrap;
+ }
+ 
+ .column {
+   flex: 1;
+   padding: 10px;
+   min-width: 200px;
+   text-align: center;
+ }
+ 
+ .heading {
+   font-size: 18px;
+   font-weight: bold;
+   margin-bottom: 15px;
+ }
+ 
+ .list {
+   list-style: none;
+   padding: 0;
+ }
+ 
+ .list li {
+   margin-bottom: 8px;
+ }
+ 
+ /* Links */
+ .list a {
+   text-decoration: none;
+   color: #ffffff;
+   font-size: 16px;
+   transition: color 0.3s ease;
+ }
+ 
+ .list a:hover {
+   color: #d9d9d9;
+ }
+ 
+ /* Address and Map */
+ .map {
+   border-radius: 15px;
+   border: none;
+   max-width: 100%;
+ }
+ 
+ .logo {
+   margin-top: 20px;
+ }
+ 
+ .logo-image {
+   max-width: 100px;
+   height: auto;
+ }
+ 
