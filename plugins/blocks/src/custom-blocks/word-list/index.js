@@ -1,7 +1,10 @@
 import { registerBlockType } from "@wordpress/blocks";
 import { RichText } from "@wordpress/block-editor";
 import { useState } from "@wordpress/element";
+import React from "react";
+import { createRoot } from "react-dom/client";
 
+// Swedish alphabet
 const SWEDISH_ALPHABETS = [
   "A",
   "B",
@@ -31,6 +34,7 @@ const SWEDISH_ALPHABETS = [
   "Ö",
 ];
 
+// Register block in WordPress editor
 registerBlockType("custom/word-list", {
   title: "Word List Block",
   icon: "editor-ul",
@@ -38,9 +42,10 @@ registerBlockType("custom/word-list", {
   attributes: {
     words: {
       type: "array",
-      default: [], 
+      default: [],
     },
   },
+
   edit: ({ attributes, setAttributes }) => {
     const { words } = attributes;
     const [selectedLetter, setSelectedLetter] = useState("A");
@@ -110,11 +115,15 @@ registerBlockType("custom/word-list", {
       </div>
     );
   },
+
   save: ({ attributes }) => {
     const { words } = attributes;
 
     return (
-      <div className="word-list-block">
+      <div
+        className="word-list-block"
+        data-words={JSON.stringify(words)}
+      >
         <div className="alphabet-bar">
           {SWEDISH_ALPHABETS.map((letter) => (
             <button key={letter} className="alphabet" data-letter={letter}>
@@ -122,21 +131,17 @@ registerBlockType("custom/word-list", {
             </button>
           ))}
         </div>
-        <div className="word-list-content">
+        <div className="word-list-section">
           {SWEDISH_ALPHABETS.map((letter) => (
-            <div
-              key={letter}
-              className="word-list-section"
-              data-letter={letter}
-            >
+            <div key={letter} className="word-list-group" data-letter={letter}>
               <h3>{letter}</h3>
               <ul>
                 {words
                   .filter((word) => word.letter === letter)
                   .map((word, index) => (
-                    <li key={index} className="word-item">
-                      <strong className="word-term">{word.term}</strong>
-                      <p className="word-description">{word.description}</p>
+                    <li key={index}>
+                      <strong>{word.term}</strong>
+                      <p>{word.description}</p>
                     </li>
                   ))}
               </ul>
@@ -147,3 +152,48 @@ registerBlockType("custom/word-list", {
     );
   },
 });
+
+// Frontend functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const wordListBlocks = document.querySelectorAll(".word-list-block");
+
+  wordListBlocks.forEach((block) => {
+    const words = JSON.parse(block.getAttribute("data-words"));
+    const root = createRoot(block);
+    root.render(<WordList words={words} />);
+  });
+});
+
+// Frontend WordList React Component
+const WordList = ({ words }) => {
+  const [selectedLetter, setSelectedLetter] = useState("A");
+
+  const filteredWords = words.filter((word) => word.letter === selectedLetter);
+
+  return (
+    <div>
+      <div className="alphabet-bar">
+        {SWEDISH_ALPHABETS.map((letter) => (
+          <button
+            key={letter}
+            className={`alphabet ${letter === selectedLetter ? "active" : ""}`}
+            onClick={() => setSelectedLetter(letter)}
+          >
+            {letter}
+          </button>
+        ))}
+      </div>
+      <div className="word-list-section">
+        <h3>{selectedLetter}</h3>
+        <ul>
+          {filteredWords.map((word, index) => (
+            <li key={index}>
+              <strong>{word.term}</strong>
+              <p>{word.description}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};

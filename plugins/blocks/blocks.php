@@ -55,14 +55,33 @@ if (!defined('ABSPATH')) {
       
     add_action( 'enqueue_block_editor_assets', 'custom_blocks_enqueue' );
      
-    // Enqueue frontend JavaScript
-    function enqueue_word_list_frontend_script() {
-         wp_enqueue_script(
-            'word-list-frontend',
-            plugins_url('wordlist.js', __FILE__),
-            array(),
-            filemtime(plugin_dir_path(__FILE__) . 'wordlist.js'),
+    function enqueue_combined_word_list_script() {
+        $script_path = plugin_dir_path(__FILE__) . 'src/blocks/word-list/index.js';
+    
+        // Ensure the script exists
+        if (!file_exists($script_path)) {
+            error_log("Error: Combined script file not found at $script_path");
+            return;
+        }
+    
+        wp_enqueue_script(
+            'word-list-combined',
+            plugin_dir_url(__FILE__) . 'src/blocks/word-list/index.js',
+            array('wp-element', 'wp-blocks', 'wp-editor'),
+            filemtime($script_path),
             true
-    );
-}
-add_action('wp_enqueue_scripts', 'enqueue_word_list_frontend_script');
+        );
+    
+        // Enqueue the CSS for both editor and frontend
+        $style_path = plugin_dir_path(__FILE__) . 'src/blocks/word-list/style.css';
+        if (file_exists($style_path)) {
+            wp_enqueue_style(
+                'word-list-style',
+                plugin_dir_url(__FILE__) . 'src/blocks/word-list/style.css',
+                array(),
+                filemtime($style_path)
+            );
+        }
+    }
+    add_action('enqueue_block_assets', 'enqueue_combined_word_list_script');
+    
