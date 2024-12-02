@@ -1,4 +1,5 @@
 import { Component } from '@wordpress/element';
+import Navbar from './Navbar';
 
 class Header extends Component {
     render() {
@@ -14,6 +15,7 @@ class Header extends Component {
         return (
             <header style={headerStyle}>
                 <div>My WP Theme</div>
+                <Navbar />
                 <button onClick={toggleTheme}>{darkTheme ? 'Light Mode' : 'Dark Mode'}</button>
             </header>
         );
