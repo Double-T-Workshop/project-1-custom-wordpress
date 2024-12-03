@@ -1,37 +1,50 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 2,
-    "name": "custom/contact-block",
-    "title": "Contact Block",
-    "category": "common",
-    "icon": "email",
-    "description": "A custom block to display a contact section with a form and contact details.",
-    "keywords": ["contact", "form", "info"],
-    "attributes": {
-      "formShortcode": {
-        "type": "string",
-        "default": "[contact-form-7 id='123' title='Contact form 1']"
-      },
-      "imageUrl": {
-        "type": "string",
-        "default": "path/to/image.jpg"
-      },
-      "heading": {
-        "type": "string",
-        "default": "Kontakta oss"
-      },
-      "content": {
-        "type": "string",
-        "default": "Har du frågor eller vill du veta mer om våra tjänster? Tveka inte att höra av dig till oss! Vi finns här för att hjälpa dig att hitta rätt IT-lösning för ditt företag."
-      }
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "custom/contact-block",
+  "title": "Contact Block",
+  "category": "common",
+  "icon": "email",
+  "description": "A custom block to display a contact section with a form and contact details.",
+  "keywords": ["contact", "form", "info"],
+  "attributes": {
+    "formShortcode": {
+      "type": "string",
+      "default": "[contact-form-7 id='123' title='Contact form 1']"
     },
- "supports": {
-  "html": false,
-  "multiple": true,
-  "removable": true
-},
-    "editorScript": "file:./index.js",
-    "editorStyle": "file:./editor.css",
-    "style": "file:./style.css"
-  }
-  
+    "formId": {
+      "type": "string",
+      "default": "123"
+    },
+    "formTitle": {
+      "type": "string",
+      "default": "Contact form 1"
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": "path/to/image.jpg"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Kontakta oss"
+    },
+    "content": {
+      "type": "string",
+      "default": "Har du frågor eller vill du veta mer om våra tjänster? Tveka inte att höra av dig till oss! Vi finns här för att hjälpa dig att hitta rätt IT-lösning för ditt företag."
+    },
+    "email": {
+      "type": "string",
+      "default": "info@novoit.com"
+    },
+    "phone": {
+      "type": "string",
+      "default": "+46 (0)70–791 81 77"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css"
+}

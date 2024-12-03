@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Custom Blocks
-Description: A set of custom Gutenberg blocks built with React.
+Description: A set of custom Gutenberg blocks built with/without React.
 Version: 1.0
 Author: By Double-T-Workshop
 */
@@ -16,10 +16,30 @@ if (!defined('ABSPATH')) {
  */
 // Register the custom block script and style
     function register_custom_blocks() {
-        $blocks = ['block-one', 'block-two', 'block-three', 'block-four', "contact-block"];
-        foreach ($blocks as $block) {
-            register_block_type(__DIR__ . "/src/blocks/$block");
-        }
+        // Define the path where your block folders are stored
+    $blocks_directory = __DIR__ . '/src/blocks/';
+    
+    // Use glob to get all directories within that path
+    $block_folders = glob($blocks_directory . '*', GLOB_ONLYDIR);
+    
+    foreach ($block_folders as $block_folder) {
+        // Extract block name from folder name (e.g., 'media-and-text-above' from '/src/custom-blocks/media-and-text-above')
+        $block = basename($block_folder);
+        
+        // Register the block type
+        register_block_type($block_folder, array(
+            'style' => "custom-block-style-$block",
+        ));
+
+        // Enqueue block-specific CSS
+        wp_register_style(
+            "custom-block-style-$block",
+            plugins_url("src/blocks/$block/style.css", __FILE__),
+            array(),
+            file_exists(plugin_dir_path(__FILE__) . "src/blocks/$block/style.css") ? filemtime(plugin_dir_path(__FILE__) . "src/blocks/$block/style.css") : false
+        );
+
+    }
     }
     add_action('init', 'register_custom_blocks');
 
@@ -27,12 +47,22 @@ if (!defined('ABSPATH')) {
         wp_enqueue_script(
             'custom-blocks',
             plugin_dir_url(__FILE__) . 'build/index.js',
-            array('wp-blocks', 'wp-element', 'wp-editor', 'wp-components'),
-            filemtime(plugin_dir_path(__FILE__) . 'build/index.js')
+            array('wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-data'),
+            filemtime(plugin_dir_path(__FILE__) . 'build/index.js'),
+            true
         );
-      }
+    }
       
-      add_action( 'enqueue_block_editor_assets', 'custom_blocks_enqueue' );
-
-
-    
+    add_action( 'enqueue_block_editor_assets', 'custom_blocks_enqueue' );
+     
+//     // Enqueue frontend JavaScript
+//     function enqueue_word_list_frontend_script() {
+//          wp_enqueue_script(
+//             'word-list-frontend',
+//             plugins_url('wordlist.js', __FILE__),
+//             array(),
+//             filemtime(plugin_dir_path(__FILE__) . 'wordlist.js'),
+//             true
+//     );
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_word_list_frontend_script');

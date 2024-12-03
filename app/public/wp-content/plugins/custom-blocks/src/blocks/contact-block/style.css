@@ -59,3 +59,95 @@
 .contact-right form button:hover {
     background-color: #5c936e;
 }
+
+/* General form styles */
+.custom-contact-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #f8e1c2; /* Matches the beige background */
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+  }
+  
+  /* Left contact info section */
+  .custom-contact-form .contact-info {
+    max-width: 40%; /* Adjust width */
+  }
+  
+  .custom-contact-form .contact-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .custom-contact-form .contact-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .custom-contact-form .contact-info p span {
+    font-weight: bold;
+    color: #63ab65; /* Matches the green text */
+  }
+  
+  /* Right form section */
+  .custom-contact-form form {
+    max-width: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .custom-contact-form input[type="text"],
+  .custom-contact-form input[type="email"],
+  .custom-contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f3eb;
+    font-size: 16px;
+  }
+  
+  .custom-contact-form textarea {
+    min-height: 100px;
+    resize: none;
+  }
+  
+  .custom-contact-form input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .custom-contact-form label {
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .custom-contact-form input[type="submit"] {
+    background-color: #63ab65;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+  
+  .custom-contact-form input[type="submit"]:hover {
+    background-color: #529a55;
+  }
+  
+  /* GDPR compliance text */
+  .custom-contact-form p.gdpr-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+  }
+  

@@ -1,6 +1,10 @@
-// src/index.js
-import "./blocks/block-one";
-import "./blocks/block-two";
-import "./blocks/block-three";
-import "./blocks/block-four";
-import "./blocks/contact-block";
+const blockContext = require.context('./blocks', true, /index\.js$/);
+
+blockContext.keys().forEach((blockPath) => {
+  try {
+    blockContext(blockPath);
+  } catch (error) {
+    console.error(`Error loading block: ${blockPath}`, error);
+  }
+});
+
