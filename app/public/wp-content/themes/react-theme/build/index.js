@@ -5169,27 +5169,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Footer_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Footer.css */ "./src/Footer.css");
-// import { Component } from '@wordpress/element';
-
-// class Footer extends Component {
-//     render() {
-//         const { darkTheme } = this.props;
-//         const footerStyle = {
-//             backgroundColor: darkTheme ? '#333' : '#EEE',
-//             color: darkTheme ? 'white' : '#333',
-//             padding: '20px',
-//             textAlign: 'center',
-//         };
-//         return (
-//             <footer style={footerStyle}>
-//                 © {new Date().getFullYear()} My WP Theme
-//             </footer>
-//         );
-//     }
-// }
-
-// export default Footer;
-
 
 var Footer = function Footer() {
   return /*#__PURE__*/React.createElement("footer", {
@@ -5267,8 +5246,6 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
 function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
 function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
@@ -5276,33 +5253,84 @@ function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.
 function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
 function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
 function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 var Header = /*#__PURE__*/function (_Component) {
-  function Header() {
+  function Header(props) {
+    var _this;
     _classCallCheck(this, Header);
-    return _callSuper(this, Header, arguments);
+    _this = _callSuper(this, Header, [props]);
+    _defineProperty(_this, "toggleLanguage", function () {
+      _this.setState(function (prevState) {
+        return {
+          language: prevState.language === 'SE' ? 'EN' : 'SE'
+        };
+      });
+    });
+    _this.state = {
+      language: 'SE' // Default language
+    };
+    return _this;
   }
   _inherits(Header, _Component);
   return _createClass(Header, [{
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-        toggleTheme = _this$props.toggleTheme,
-        darkTheme = _this$props.darkTheme;
+      var language = this.state.language;
       var headerStyle = {
-        backgroundColor: darkTheme ? '#333' : '#EEE',
-        color: darkTheme ? 'white' : '#333',
+        backgroundColor: '#FFF',
+        // Static background color
+        color: '#333',
+        // Static text color
         padding: '10px 20px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' // Add a subtle shadow for design
+      };
+      var buttonStyle = {
+        padding: '10px 20px',
+        backgroundColor: '#63ab65',
+        color: '#FFF',
+        textDecoration: 'none',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        fontSize: '1rem',
+        marginLeft: '20px'
       };
       return /*#__PURE__*/React.createElement("header", {
         style: headerStyle
-      }, /*#__PURE__*/React.createElement("div", null, "My WP Theme"), /*#__PURE__*/React.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/React.createElement("button", {
-        onClick: toggleTheme
-      }, darkTheme ? 'Light Mode' : 'Dark Mode'));
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '1.5rem',
+          fontWeight: 'bold',
+          color: '#63ab65'
+        }
+      }, "novoit"), /*#__PURE__*/React.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/React.createElement("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center'
+        }
+      }, /*#__PURE__*/React.createElement("button", {
+        onClick: this.toggleLanguage,
+        style: {
+          padding: '5px 10px',
+          backgroundColor: 'transparent',
+          border: '1px solid #63ab65',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          fontSize: '0.9rem',
+          color: '#63ab65',
+          marginRight: '20px'
+        }
+      }, language), /*#__PURE__*/React.createElement("a", {
+        href: "/webshop",
+        style: buttonStyle
+      }, "Webshop")));
     }
   }]);
 }(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Component);
@@ -5320,121 +5348,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useQuery.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useQuery.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apollo-client */ "./src/apollo-client.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 var _templateObject;
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 function _taggedTemplateLiteral(e, t) { return t || (t = e.slice(0)), Object.freeze(Object.defineProperties(e, { raw: { value: Object.freeze(t) } })); }
-// import React from 'react';
-// import { useQuery, gql } from '@apollo/client';
-// import client from './apollo-client';
-
-// // GraphQL query to fetch the primary menu
-// const GET_PRIMARY_MENU = gql`
-//   query GetPrimaryMenu {
-//     menu(id: "primary", idType: LOCATION) {
-//       menuItems {
-//         nodes {
-//           id
-//           label
-//           url
-//           parentId
-//         }
-//       }
-//     }
-//   }
-// `;
-
-// const Navbar = () => {
-//     const { loading, error, data } = useQuery(GET_PRIMARY_MENU, { client });
-
-//     if (loading) return <p>Loading...</p>;
-//     if (error) return <p>Error: {error.message}</p>;
-
-//     const menuItems = data.menu.menuItems.nodes;
-
-//     return (
-//         <nav>
-//             <ul>
-//                 {menuItems.map((item) => (
-//                     <li key={item.id}>
-//                         <a href={item.url}>{item.label}</a>
-//                     </li>
-//                 ))}
-//             </ul>
-//         </nav>
-//     );
-// };
-
-// export default Navbar;
-
-// import { useQuery, gql } from '@apollo/client';
-// import { Link } from 'react-router-dom';
-// import client from './apollo-client';
-
-// // GraphQL query to fetch the primary menu
-// const GET_PRIMARY_MENU = gql`
-//   query GetPrimaryMenu {
-//     menu(id: "primary", idType: LOCATION) {
-//       menuItems {
-//         nodes {
-//           id
-//           label
-//           url
-//           parentId
-//         }
-//       }
-//     }
-//   }
-// `;
-
-// const Navbar = () => {
-//     const { loading, error, data } = useQuery(GET_PRIMARY_MENU, { client });
-
-//     if (loading) return <p>Loading...</p>;
-//     if (error) return <p>Error: {error.message}</p>;
-
-//     const menuItems = data.menu.menuItems.nodes;
-
-//     // Transform WordPress URLs to relative paths
-//     const transformUrl = (url) => {
-//         const wordpressBaseUrl = 'http://localhost:10022'; // Replace with your WordPress URL
-//         if (url.startsWith(wordpressBaseUrl)) {
-//             return url.replace(wordpressBaseUrl, '');
-//         }
-//         return url;
-//     };
-
-//     return (
-//         <nav>
-//             <ul>
-//                 {menuItems.map((item) => (
-//                     <li key={item.id}>
-//                         <Link to={transformUrl(item.url)}>{item.label}</Link>
-//                     </li>
-//                 ))}
-//             </ul>
-//         </nav>
-//     );
-// };
-
-// export default Navbar;
 
 
 
 
-var GET_PRIMARY_MENU = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_1__.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nquery GetPrimaryMenu {\n  menu(id: \"primary\", idType: LOCATION) {\n    menuItems {\n      nodes {\n        id\n        label\n        url\n        parentId\n      }\n    }\n  }\n}\n"])));
+var GET_PRIMARY_MENU = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_2__.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nquery GetPrimaryMenu {\n  menu(id: \"primary\", idType: LOCATION) {\n    menuItems {\n      nodes {\n        id\n        label\n        url\n        parentId\n      }\n    }\n  }\n}\n"])));
 var Navbar = function Navbar() {
-  var _useQuery = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_2__.useQuery)(GET_PRIMARY_MENU, {
+  var _useQuery = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_3__.useQuery)(GET_PRIMARY_MENU, {
       client: _apollo_client__WEBPACK_IMPORTED_MODULE_0__["default"]
     }),
     loading = _useQuery.loading,
     error = _useQuery.error,
     data = _useQuery.data;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+    _useState2 = _slicedToArray(_useState, 2),
+    activeDropdown = _useState2[0],
+    setActiveDropdown = _useState2[1];
   if (loading) return /*#__PURE__*/React.createElement("p", null, "Loading...");
   if (error) return /*#__PURE__*/React.createElement("p", null, "Error: ", error.message);
   var menuItems = data.menu.menuItems.nodes;
+
+  // Helper to group menu items by parentId
+  var getChildren = function getChildren(parentId) {
+    return menuItems.filter(function (item) {
+      return item.parentId === parentId;
+    });
+  };
   var transformUrl = function transformUrl(url) {
     var wordpressBaseUrl = 'http://localhost:10022'; // Replace with your WordPress URL
     if (url.startsWith(wordpressBaseUrl)) {
@@ -5442,12 +5399,72 @@ var Navbar = function Navbar() {
     }
     return url.replace(/\/$/, ''); // Handle relative paths
   };
-  return /*#__PURE__*/React.createElement("nav", null, /*#__PURE__*/React.createElement("ul", null, menuItems.map(function (item) {
+  return /*#__PURE__*/React.createElement("nav", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between'
+    }
+  }, /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: 'none',
+      display: 'flex',
+      margin: 0,
+      padding: 0
+    }
+  }, menuItems.filter(function (item) {
+    return !item.parentId;
+  }) // Top-level menu items
+  .map(function (item) {
+    var children = getChildren(item.id);
+    var hasChildren = children.length > 0;
     return /*#__PURE__*/React.createElement("li", {
-      key: item.id
-    }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-      to: transformUrl(item.url)
-    }, item.label));
+      key: item.id,
+      style: {
+        position: 'relative',
+        margin: '0 15px',
+        cursor: 'pointer'
+      },
+      onMouseEnter: function onMouseEnter() {
+        return hasChildren && setActiveDropdown(item.id);
+      },
+      onMouseLeave: function onMouseLeave() {
+        return hasChildren && setActiveDropdown(null);
+      }
+    }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+      to: transformUrl(item.url),
+      style: _defineProperty(_defineProperty({
+        textDecoration: 'none',
+        color: '#333',
+        padding: '5px 10px',
+        backgroundColor: activeDropdown === item.id ? '#63ab65' : ''
+      }, "color", activeDropdown === item.id ? 'white' : '#333'), "borderRadius", hasChildren ? '5px' : '0')
+    }, item.label, " ", hasChildren && '▾'), hasChildren && activeDropdown === item.id && /*#__PURE__*/React.createElement("ul", {
+      style: {
+        position: 'absolute',
+        top: '100%',
+        left: 0,
+        backgroundColor: 'white',
+        listStyle: 'none',
+        padding: '10px 0',
+        margin: 0,
+        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+        zIndex: 1000
+      }
+    }, children.map(function (child) {
+      return /*#__PURE__*/React.createElement("li", {
+        key: child.id,
+        style: {
+          padding: '10px 20px'
+        }
+      }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+        to: transformUrl(child.url),
+        style: {
+          textDecoration: 'none',
+          color: '#333',
+          whiteSpace: 'nowrap'
+        }
+      }, child.label));
+    })));
   })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);

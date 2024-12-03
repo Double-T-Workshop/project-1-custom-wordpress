@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "custom/news-slider-block",
+    "title": "News Slider Block",
+    "category": "widgets",
+    "icon": "slides",
+    "description": "A news slider carousel with hover effects.",
+    "keywords": ["news", "slider", "carousel"],
+    "attributes": {
+      "slides": {
+        "type": "array",
+        "default": []
+      }
+    },
+    "supports": {
+      "html": false
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./style.css"
+  }
+  

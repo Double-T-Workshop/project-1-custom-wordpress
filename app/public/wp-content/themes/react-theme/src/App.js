@@ -39,6 +39,7 @@ import Footer from './Footer';
 import Pages from './Pages';
 import { useState } from 'react';
 
+
 export default function App() {
     const [darkTheme, setDarkTheme] = useState(true); // Replace class state with useState
 
@@ -60,7 +61,7 @@ export default function App() {
                     }}
                 >
                     <Pages />
-                </main>
+                    </main>
                 <Footer darkTheme={darkTheme} />
             </Router>
         </ApolloProvider>
