@@ -2,7 +2,7 @@ import { useBlockProps, RichText, MediaUpload, MediaUploadCheck, InspectorContro
 import { Button, PanelBody } from "@wordpress/components";
 import { registerBlockType } from "@wordpress/blocks";
 
-registerBlockType("custom/block-three", {
+registerBlockType("custom/map-block", {
   attributes: {
     leftImage: {
       type: "string",

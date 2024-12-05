@@ -1,7 +1,7 @@
 {
   "apiVersion": 2,
-  "name": "custom/block-three",
-  "title": "Custom Block Three",
+  "name": "custom/map-block",
+  "title": "Custom Map Block",
   "category": "common",
   "icon": "smiley",
   "description": "A custom block with two images (left and right) and a text block in the middle.",

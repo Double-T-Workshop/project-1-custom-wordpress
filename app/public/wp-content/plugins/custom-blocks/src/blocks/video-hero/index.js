@@ -18,8 +18,10 @@ registerBlockType("custom/video-background-block", {
     const onSelectVideo = (media) => setAttributes({ videoUrl: media.url });
     const onChangeTitle = (value) => setAttributes({ title: value });
     const onChangeSubtitle = (value) => setAttributes({ subtitle: value });
-    const onChangeButtonText = (value) => setAttributes({ buttonText: value });
-    const onChangeButtonUrl = (value) => setAttributes({ buttonUrl: value });
+    const onChangeButtonText = (value) =>
+      setAttributes({ buttonText: value });
+    const onChangeButtonUrl = (value) =>
+      setAttributes({ buttonUrl: value });
 
     return (
       <div {...blockProps}>
@@ -71,7 +73,21 @@ registerBlockType("custom/video-background-block", {
               className="cta-button"
             />
           </div>
-          <button className="arrow-button">▼</button>
+          <button
+            className="arrow-button"
+            onClick={() =>
+              window.scrollTo({
+                top: window.innerHeight,
+                behavior: "smooth",
+              })
+            }
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2985/2985150.png"
+              alt="Arrow Icon"
+              className="arrow-icon"
+            />
+          </button>
         </div>
       </div>
     );
@@ -110,7 +126,21 @@ registerBlockType("custom/video-background-block", {
               {buttonText}
             </a>
           </div>
-          <button className="arrow-button">▼</button>
+          <button
+            className="arrow-button"
+            onClick={() =>
+              window.scrollTo({
+                top: window.innerHeight,
+                behavior: "smooth",
+              })
+            }
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2985/2985150.png"
+              alt="Arrow Icon"
+              className="arrow-icon"
+            />
+          </button>
         </div>
       </div>
     );
